@@ -1,0 +1,9 @@
+{
+  "variable":[
+    {
+      "name": "Location",
+      "type": "static",
+      "value": "on_maccor"
+    }
+  ]
+}

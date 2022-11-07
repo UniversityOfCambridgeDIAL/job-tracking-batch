@@ -1,0 +1,36 @@
+{
+  "variable": [
+    {
+      "name": "Type",
+      "type": "retain",
+      "pattern": "^type_(.*)"
+    },
+    {
+      "name": "Location",
+      "type": "retain",
+      "pattern": "^l_(.*)"
+    },
+ 	{
+      "name": "id",
+      "type": "single",
+      "pattern": "^(.*)"
+    }
+
+  ],
+  "output": [
+    {
+      "name": "job_scanned",
+      "topic": "jobs",
+      "triggers": [
+        "id"
+      ],
+      "trigger_policy": "any",
+      "payload": {
+        "job_id": "id",
+        "type": "Type",
+        "timestamp": "timestamp",
+        "location": "Location"
+      }
+    }
+  ]
+}
